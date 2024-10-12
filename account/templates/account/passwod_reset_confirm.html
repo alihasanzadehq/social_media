@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+    {% if validlink %}
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input type="submit" value="Change">
+    </form>
+
+    {% else %}
+    <p>this link in vot valid pleas try again</p>
+    {% endif %}
+
+{% endblock %}
